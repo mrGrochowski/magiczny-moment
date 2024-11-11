@@ -1,20 +1,13 @@
 <template>
-  <div>
-    BĘDĘ MIAŁ SEKCJE
 
-    <main>
-      <pre>{{ data }}</pre>
-    </main>
-  </div>
+
+  <section v-for="section in sections" :key="section._id">
+    <ContentRendererMarkdown :value="section.body" />
+  </section>
 </template>
 
-<script setup lang="ts">
-const route = useRoute();
-
-const { data } = await useAsyncData(`content-${route.path}`, () => {
-  return queryContent().where({ _partial: true }).findOne();
+<script setup>
+const { data: sections } = await useAsyncData('sections', async () => {
+  return await queryContent().only(['title', 'body']).find()
 })
-
 </script>
-
-<style scoped></style>
