@@ -6,4 +6,4 @@ content: |
 image: /images.jpg
 ---
 
-# Sekcja Blocks
+#
