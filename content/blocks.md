@@ -5,5 +5,3 @@ content: |
   Tutaj znajduje się treść blocks sekcji, którą można edytować w ograniczony sposób.
 image: '/images/section1.jpg'
 ---
-
-# Sekcja Blocks
