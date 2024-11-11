@@ -1,7 +1,9 @@
 ---
 title: "Tytuł Hero"
+content: |
+  # Witaj w Sekcji 1
+  Tutaj znajduje się treść pierwszej sekcji, którą można edytować w ograniczony sposób.
+image: '/images/section1.jpg'
 ---
 
-# Treść Hero
-
-Tu znajduje się treść pierwszej sekcji, która będzie renderowana na stronie.
+# Sekcja Hero
