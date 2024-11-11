@@ -1,7 +1,6 @@
 <template>
 
   <section v-for="section in sections" :key="section._id">
-    <pre>{{ section }}</pre>
     <template v-if="section._id === 'content:hero.md'">
       <Hero :image="section.image" />
     </template>
