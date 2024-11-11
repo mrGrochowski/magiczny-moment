@@ -9,9 +9,9 @@
     <!-- Centered Text Content -->
     <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
       <div>
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">
           {{ title }}
-        </h1>
+        </h2>
         <p class="text-lg md:text-xl max-w-xl mx-auto mb-8">
           {{ desription }}
         </p>
