@@ -1,5 +1,5 @@
 ---
 title: Magiczny moment
-content: Tutaj będzie opis jaki jest potrzebny albo i nie ¯\_( ͡° ͜ʖ ͡°)_/¯
+content: 'Tutaj będzie opis jaki jest potrzebny albo i nie ¯\_( ͡° ͜ʖ ͡°)_/¯ '
 image: /457065765_122154398708052132_8698480936273943806_n.jpg
 ---
