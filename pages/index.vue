@@ -8,7 +8,7 @@
         <Hero :image="section.image" :title="section.title" :desription="section.content" />
       </template>
       <template v-if="section._id === 'content:_2.blocks.md'">
-        <Love :image="section.image" :title="section.title" :desription="section.content" />
+        <Love id="oferta" :image="section.image" :title="section.title" :desription="section.content" />
       </template>
 
       <!-- <ContentRendererMarkdown :value="section.body" /> -->
