@@ -9,7 +9,7 @@
     <!-- Centered Text Content -->
     <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
       <div>
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        <h1 class="text-8xl font-bold mb-4 font-[Satisfy]">
           {{ title }}
         </h1>
         <p class="text-lg md:text-xl max-w-xl mx-auto mb-8">
