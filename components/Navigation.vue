@@ -3,23 +3,24 @@
 
     <ul class="flex space-x-4">
       <li v-for="section in sections" :key="section._id">
-
         <a :href="'#' + useGenHumanReadableId(section._stem)" class="cursor-pointer text-slate-200 hover:underline">
           {{ section.title }}
         </a>
       </li>
     </ul>
+
   </nav>
 </template>
 
 <script setup lang="ts">
 import { useGenHumanReadableId } from '../composable/useGenHumanReadableId'
+const viewport = useViewport()
 
 const { data: sections } = await useAsyncData('sections', async () => {
   return await queryContent().find()
 })
-</script>
 
-<style scoped>
-/* Additional custom styles if needed */
-</style>
+watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
+  console.log('Breakpoint updated:', oldBreakpoint, '->', newBreakpoint)
+})
+</script>
