@@ -8,7 +8,7 @@
       <div>
         <img src="/public/LOGO.png" alt="Logo" class="size-[400px] mx-auto mb-4" />
         <p class="max-w-xl mx-auto mb-8 text-lg md:text-xl">
-          {{ desription }}
+          {{ content }}
         </p>
         <a :href="`#${link}`" class="px-6 py-3 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
           Zobacz więcej
@@ -22,7 +22,7 @@
 defineProps({
   image: String,
   title: String,
-  desription: String,
+  content: String,
   link: String
 })
 </script>

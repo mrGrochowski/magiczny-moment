@@ -9,7 +9,7 @@
           <span v-if="useGenHumanReadableId(section._stem) === 'witamy'"
             class="text-4xl font-[eternals-universe]">Magiczny
             Moment</span>
-          <span v-else>{{ section.title }}</span>
+          <span v-else>{{ section.fields.title }}</span>
         </a>
       </li>
     </ul>

@@ -3,12 +3,12 @@
     <Navigation />
     <template v-for="(section, index) in sections" :key="section._id">
       <template v-if="section._stem === '_1.witamy'">
-        <Witamy class="full-width" :id="useGenHumanReadableId(section._stem)" :image="section.image"
-          :title="section.title" :desription="section.content" :link="useGenHumanReadableId(sections[index + 1]._stem)" />
+        <Witamy class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields"
+          :link="useGenHumanReadableId(sections[index + 1]._stem)" />
       </template>
       <template v-else>
-        <GenerycznaSekcja class="full-width" :id="useGenHumanReadableId(section._stem)" :image="section.image"
-          :title="section.title" :desription="section.content" />
+        <pre>{{ section }}</pre>
+        <GenerycznaSekcja class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields" />
       </template>
 
       <!-- <ContentRendererMarkdown :value="section.body" /> -->
