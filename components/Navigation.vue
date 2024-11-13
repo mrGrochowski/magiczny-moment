@@ -1,10 +1,15 @@
 <template>
-  <nav class="flex w-full fixed z-50 bg-gradient-to-b from-black to-transparent p-4 ">
+  <nav class="fixed z-50 flex w-full p-4 content-grid bg-gradient-to-b from-gray-900/80 to-transparent">
 
-    <ul class="flex space-x-4">
-      <li v-for="section in sections" :key="section._id">
-        <a :href="'#' + useGenHumanReadableId(section._stem)" class="cursor-pointer text-slate-200 hover:underline">
-          {{ section.title }}
+    <ul class="flex items-center justify-end w-full gap-8">
+      <li v-for="(section, index) in sections" :key="section._id"
+        :class="{ 'mr-auto': useGenHumanReadableId(section._stem) === 'witamy' }">
+        <a :href="'#' + useGenHumanReadableId(section._stem)"
+          class="font-bold cursor-pointer text-accent hover:text-accent-600 text-shadow-sm shadow-gray-500 ">
+          <span v-if="useGenHumanReadableId(section._stem) === 'witamy'"
+            class="text-4xl font-[eternals-universe]">Magiczny
+            Moment</span>
+          <span v-else>{{ section.title }}</span>
         </a>
       </li>
     </ul>
@@ -23,4 +28,5 @@ const { data: sections } = await useAsyncData('sections', async () => {
 watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   console.log('Breakpoint updated:', oldBreakpoint, '->', newBreakpoint)
 })
+
 </script>

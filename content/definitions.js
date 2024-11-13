@@ -24,5 +24,11 @@ export default {
         maxSize: '500KB',
       },
     },
+    {
+      name: 'price',
+      type: 'string',
+      title: 'Cena',
+      description: 'Przykładowa cena',
+    },
   ],
 }

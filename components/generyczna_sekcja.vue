@@ -1,33 +1,37 @@
 <template>
-  <section class="relative h-screen overflow-hidden bg-gray-800">
-    <!-- Background Image -->
-    <img :src="image" alt="Background" class="absolute inset-0 w-full h-full object-cover" />
-
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+  <figure class="h-screen overflow-hidden bg-gray-800 bg-cover " :style="`background-image: url('${image}');`">
 
     <!-- Centered Text Content -->
-    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
-      <div>
-        <h2 class="text-4xl md:text-6xl font-bold mb-4">
+    <div class="flex flex-row items-center justify-center h-full px-4 text-center text-white ">
+      <div class="">
+        <h2 class="mb-4 text-4xl font-bold md:text-6xl">
           {{ title }}
         </h2>
-        <p class="text-lg md:text-xl max-w-xl mx-auto mb-8">
-          {{ desription }}
+        <p
+          class="flex flex-col max-w-xl p-8 mx-auto mb-8 text-lg text-left md:text-xl backdrop-blur-md rounded-xl drop-shadow-md">
+          {{ desription }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic doloribus consequuntur.
+          Dolores, eos. Ad cupiditate tenetur soluta eaque officiis, ut ullam, perspiciatis nemo hic itaque doloribus,
+          inventore commodi totam.
+
+        <div class="flex items-center justify-end w-full mt-6">
+          <span class="text-2xl">Cena: {{ price }}</span>
+          <a href="#oferta" class="px-6 py-3 ml-4 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
+            Zamów
+          </a>
+        </div>
         </p>
-        <a href="#oferta" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md">
-          Zobaczw więcej
-        </a>
+
       </div>
     </div>
-  </section>
+  </figure>
 </template>
 
 <script setup lang="ts">
 defineProps({
   image: String,
   title: String,
-  desription: String
+  desription: String,
+  price: String,
 })
 </script>
 
