@@ -9,9 +9,7 @@
         </h2>
         <p
           class="flex flex-col max-w-xl p-8 mx-auto mb-8 text-lg text-left md:text-xl backdrop-blur-md rounded-xl drop-shadow-md">
-          {{ content }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic doloribus consequuntur.
-          Dolores, eos. Ad cupiditate tenetur soluta eaque officiis, ut ullam, perspiciatis nemo hic itaque doloribus,
-          inventore commodi totam.
+          {{ content }}
 
         <div class="flex items-center justify-end w-full mt-6">
           <span class="text-2xl">Cena: {{ price }}</span>

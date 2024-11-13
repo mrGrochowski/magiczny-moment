@@ -7,7 +7,6 @@
           :link="useGenHumanReadableId(sections[index + 1]._stem)" />
       </template>
       <template v-else>
-        <pre>{{ section }}</pre>
         <GenerycznaSekcja class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields" />
       </template>
 
