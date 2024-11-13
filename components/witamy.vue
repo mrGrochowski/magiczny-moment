@@ -1,33 +1,29 @@
 <template>
-  <section class="relative h-screen overflow-hidden bg-gray-800">
+  <figure class="relative h-screen overflow-hidden bg-gray-800 bg-cover" :style="`background-image: url('${image}');`">
     <!-- Background Image -->
-    <img :src="image" alt="Background" class="absolute inset-0 w-full h-full object-cover" />
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
 
     <!-- Centered Text Content -->
-    <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
+    <div class="relative z-10 flex items-center justify-center h-full px-4 text-center text-white">
       <div>
-        <h1 class="text-8xl font-bold mb-4 font-[Satisfy]">
-          {{ title }}
-        </h1>
-        <p class="text-lg md:text-xl max-w-xl mx-auto mb-8">
+        <img src="/public/LOGO.png" alt="Logo" class="size-[400px] mx-auto mb-4" />
+        <p class="max-w-xl mx-auto mb-8 text-lg md:text-xl">
           {{ desription }}
         </p>
-        <a href="#oferta" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md">
-          Zobaczw więcej
+        <a :href="`#${link}`" class="px-6 py-3 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
+          Zobacz więcej
         </a>
       </div>
     </div>
-  </section>
+  </figure>
 </template>
 
 <script setup lang="ts">
 defineProps({
   image: String,
   title: String,
-  desription: String
+  desription: String,
+  link: String
 })
 </script>
 

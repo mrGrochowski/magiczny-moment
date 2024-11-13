@@ -7,4 +7,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --color-accent: #ceb67a;
+}
 </style>
