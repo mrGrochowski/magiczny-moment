@@ -1,6 +1,4 @@
 export default {
-  title: 'Section',
-  description: 'Definicja sekcji na stronie onepager',
   fields: [
     {
       name: 'title',

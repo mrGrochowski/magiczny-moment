@@ -9,7 +9,7 @@
         </h2>
         <p
           class="flex flex-col max-w-xl p-8 mx-auto mb-8 text-lg text-left md:text-xl backdrop-blur-md rounded-xl drop-shadow-md">
-          {{ desription }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic doloribus consequuntur.
+          {{ content }} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt hic doloribus consequuntur.
           Dolores, eos. Ad cupiditate tenetur soluta eaque officiis, ut ullam, perspiciatis nemo hic itaque doloribus,
           inventore commodi totam.
 
@@ -30,7 +30,7 @@
 defineProps({
   image: String,
   title: String,
-  desription: String,
+  content: String,
   price: String,
 })
 </script>
