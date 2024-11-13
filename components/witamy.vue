@@ -7,9 +7,9 @@
     <div class="relative z-10 flex items-center justify-center h-full px-4 text-center text-white">
       <div>
         <img src="/public/LOGO.png" alt="Logo" class="size-[400px] mx-auto mb-4" />
-        <p class="max-w-xl mx-auto mb-8 text-lg md:text-xl">
+        <div class="max-w-xl mx-auto mb-8 text-lg md:text-xl">
           {{ content }}
-        </p>
+        </div>
         <a :href="`#${link}`" class="px-6 py-3 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
           Zobacz więcej
         </a>
@@ -21,7 +21,6 @@
 <script setup lang="ts">
 defineProps({
   image: String,
-  title: String,
   content: String,
   link: String
 })

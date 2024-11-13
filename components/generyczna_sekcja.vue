@@ -7,17 +7,18 @@
         <h2 class="mb-4 text-4xl font-bold md:text-6xl">
           {{ title }}
         </h2>
-        <p
+        <div
           class="flex flex-col max-w-xl p-8 mx-auto mb-8 text-lg text-left md:text-xl backdrop-blur-md rounded-xl drop-shadow-md">
           {{ content }}
 
-        <div class="flex items-center justify-end w-full mt-6">
-          <span class="text-2xl">Cena: {{ price }}</span>
-          <a href="#oferta" class="px-6 py-3 ml-4 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
-            Zamów
-          </a>
+          <div class="flex items-center justify-end w-full mt-6">
+            <span class="text-2xl">Cena: {{ price }}</span>
+            <a href="#oferta"
+              class="px-6 py-3 ml-4 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
+              Zamów
+            </a>
+          </div>
         </div>
-        </p>
 
       </div>
     </div>
