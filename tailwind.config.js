@@ -17,6 +17,15 @@ export default {
           DEFAULT: 'var(--color-accent)',
           '600': 'hsl(from var(--color-accent) h s calc(l - 10))',
         }
+      },
+      animation: {
+        ['smooth-slide']: 'smooth-slide 20s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        ['smooth-slide']: {
+          'from': { ['object-position']: '0% 0%' },
+          'to': { ['object-position']: '100% 0%' },
+        }
       }
     },
   },
@@ -31,5 +40,6 @@ export default {
         { values: theme('textShadow') }
       )
     }),
+    require("tailwindcss-animate"),
   ],
 }

@@ -1,6 +1,8 @@
 <template>
-  <figure class="h-screen overflow-hidden bg-gray-800 bg-cover " :style="`background-image: url('${image}');`">
-
+  <figure class="relative h-screen overflow-hidden bg-gray-800 bg-cover">
+    <img :src="image"
+      class="absolute top-0 left-0 object-cover object-left w-screen h-screen full-width md:animate-none"
+      :class="{ 'animate-smooth-slide': isAnimation }" />
     <!-- Centered Text Content -->
     <div class="flex flex-row items-center justify-center h-full px-4 text-center text-white ">
       <div class="">
@@ -8,7 +10,7 @@
           {{ title }}
         </h2>
         <div
-          class="flex flex-col max-w-xl p-8 mx-auto mb-8 text-lg text-left md:text-xl backdrop-blur-md rounded-xl drop-shadow-md">
+          class="flex flex-col max-w-xl p-8 mx-auto mb-8 text-lg text-left md:text-xl backdrop-blur-md rounded-xl shadow-[0px_0px_20px_rgba(0,0,0,0.7)]">
           {{ content }}
 
           <div class="flex items-center justify-end w-full mt-6">
@@ -31,6 +33,7 @@ defineProps({
   title: String,
   content: String,
   price: String,
+  isAnimation: Boolean
 })
 </script>
 
