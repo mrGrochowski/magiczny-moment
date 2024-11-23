@@ -53,11 +53,6 @@ const { data: sections } = await useAsyncData('sections', async () => {
   grid-template-columns: inherit;
 }
 
-img.full-width {
-  width: 100%;
-  max-height: 45vh;
-  object-fit: cover;
-}
 
 .flow>*+* {
   margin-top: var(--flow-spacing, 1em);
