@@ -17,10 +17,11 @@
         <MenuButton>
           <li class="link">Więcej ⬇️</li>
         </MenuButton>
-        <!-- <MenuItems class="fixed z-50 right-[50px] top-[60px] flex flex-wrap whitespace-pre-line w-32 "> -->
-        <MenuItems>
-
-          <MenuButton class="inline link">✖️</MenuButton>
+        <MenuItems class="fixed z-50 right-[50px] top-[60px] flex flex-wrap whitespace-pre-line w-32 ">
+          <!--         <MenuItems>
+ -->
+          <!--          <MenuButton class="inline link">✖️</MenuButton>
+-->
           <MenuItem v-for="(section, index) in asideArray" :key="section._stem">
           <li class="inline-block">
             <a class="link" :href="'#' + useGenHumanReadableId(section._stem)">
