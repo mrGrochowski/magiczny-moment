@@ -14,7 +14,13 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    serverBundle: 'remote',
+    clientBundle: {
+      // list of icons to include in the client bundle
+      icons: [
+        'icon-park-outline:more-three',
+        'icon-park-outline:close'
+      ],
+    },
   },
   compatibilityDate: '2024-11-10'
 })
