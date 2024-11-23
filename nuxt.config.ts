@@ -20,6 +20,15 @@ export default defineNuxtConfig({
         'icon-park-outline:more-three',
         'icon-park-outline:close'
       ],
+      
+      // scan all components in the project and include icons 
+      scan: true,
+
+      // include all custom collections in the client bundle
+      includeCustomCollections: true, 
+
+      // guard for uncompressed bundle size, will fail the build if exceeds
+      sizeLimitKb: 256,
     },
   },
   compatibilityDate: '2024-11-10'
