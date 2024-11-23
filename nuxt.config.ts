@@ -13,5 +13,8 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  icon: {
+    provider: 'server'
+  },
   compatibilityDate: '2024-11-10'
 })
