@@ -1,13 +1,14 @@
 <template>
   <main class="content-grid">
-    <Navigation />
+    <Navigation v-if="!isAnimationAnywhere" />
     <template v-for="(section, index) in sections" :key="section._id">
       <template v-if="section._stem === '_1.witamy'">
         <Witamy class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields"
           :link="useGenHumanReadableId(sections[index + 1]._stem)" />
       </template>
       <template v-else>
-        <GenerycznaSekcja class="full-width" :class="{ 'mb-[--menu-height]': index + 1 === lengthOfSections }"
+        <GenerycznaSekcja class="full-width"
+          :class="{ 'mb-[--menu-height]': index + 1 === lengthOfSections && !isAnimationAnywhere }"
           :id="useGenHumanReadableId(section._stem)" :isAnimation="isAnimation[index]" v-bind="section.fields"
           @preview-clicked="previewClicked(index)" />
       </template>
@@ -31,6 +32,11 @@ isAnimation.value = Array(lengthOfSections).fill(false)
 const previewClicked = (index: number) => {
   isAnimation.value = isAnimation.value.map((elem, i) => index === i ? !elem : elem)
 }
+const isAnimationAnywhere = ref(false);
+
+watch(isAnimation, (newIsAnimation, oldIsAnimation) => {
+  isAnimationAnywhere.value = newIsAnimation.some((elem) => elem)
+})
 </script>
 
 <style>
