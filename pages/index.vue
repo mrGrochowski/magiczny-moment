@@ -7,7 +7,8 @@
           :link="useGenHumanReadableId(sections[index + 1]._stem)" />
       </template>
       <template v-else>
-        <GenerycznaSekcja class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields" />
+        <GenerycznaSekcja class="full-width" :class="{ 'mb-[--menu-height]': index + 1 === lengthOfSections }"
+          :id="useGenHumanReadableId(section._stem)" v-bind="section.fields" />
       </template>
 
       <!-- <ContentRendererMarkdown :value="section.body" /> -->
@@ -21,6 +22,9 @@ import { useGenHumanReadableId } from '../composable/useGenHumanReadableId'
 const { data: sections } = await useAsyncData('sections', async () => {
   return await queryContent().find()
 })
+
+const lengthOfSections = computed(() => toRaw(sections.value).length).value
+console.log("🚀 ~ lengthOfSections:", lengthOfSections)
 </script>
 
 <style>
@@ -53,8 +57,11 @@ const { data: sections } = await useAsyncData('sections', async () => {
   grid-template-columns: inherit;
 }
 
-
 .flow>*+* {
   margin-top: var(--flow-spacing, 1em);
+}
+
+.h-section {
+  height: calc(100vh - var(--menu-height));
 }
 </style>

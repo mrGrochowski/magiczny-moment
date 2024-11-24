@@ -1,7 +1,6 @@
 <template>
-  <figure class="relative h-screen overflow-hidden bg-gray-800 bg-cover">
-    <img :src="image"
-      class="absolute top-0 left-0 object-cover object-left w-screen h-screen full-width md:animate-none"
+  <section class="relative overflow-hidden bg-gray-800 bg-cover h-section md:!h-screen">
+    <img :src="image" class="absolute top-0 left-0 object-cover object-left w-full h-full full-width md:animate-none"
       :class="{ 'animate-smooth-slide': isAnimation }" />
     <!-- Centered Text Content -->
     <div class="flex flex-row items-center justify-center h-full px-4 text-center text-white ">
@@ -24,7 +23,7 @@
 
       </div>
     </div>
-  </figure>
+  </section>
 </template>
 
 <script setup lang="ts">
