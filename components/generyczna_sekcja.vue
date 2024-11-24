@@ -3,7 +3,8 @@
     <img :src="image" class="absolute top-0 left-0 object-cover object-left w-full h-full full-width md:animate-none"
       :class="{ 'animate-smooth-slide': isAnimation }" />
     <!-- Centered Text Content -->
-    <div class="flex flex-row items-center justify-center h-full px-4 text-center text-white ">
+    <div class="flex flex-row items-center justify-center h-full px-4 text-center text-white "
+      :class="{ 'hidden': isAnimation }">
       <div class="">
         <h2 class="mb-4 text-4xl font-bold md:text-6xl">
           {{ title }}
@@ -13,7 +14,20 @@
           {{ content }}
 
           <div class="flex items-center justify-end w-full mt-6">
-            <span class="text-2xl">Cena: {{ price }}</span>
+            <span class="text-xl">{{ price }}</span>
+            <Teleport to="#animation-close" :disabled="!isAnimation">
+              <button
+                class="flex items-center p-3 ml-4 font-semibold text-white rounded-full bg-accent hover:bg-accent-600"
+                @click="$emit('preview-clicked')">
+                <Icon :name="!isAnimation ? 'icon-park-outline:preview-open' : 'icon-park-outline:preview-close-one'"
+                  class="inline-block text-xl size-6" />
+              </button>
+            </Teleport>
+            <!-- button v-if="isAnimation"
+              class="flex items-center p-3 ml-4 font-semibold text-white rounded-full bg-accent hover:bg-accent-600"
+              @click="$emit('preview-clicked')">
+              <Icon name="icon-park-outline:preview-open" class="inline-block text-xl size-6" />
+              </button> -->
             <a href="#oferta"
               class="px-6 py-3 ml-4 font-semibold text-white rounded-full bg-accent hover:bg-accent-600">
               Zamów

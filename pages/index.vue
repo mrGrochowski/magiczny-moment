@@ -8,7 +8,8 @@
       </template>
       <template v-else>
         <GenerycznaSekcja class="full-width" :class="{ 'mb-[--menu-height]': index + 1 === lengthOfSections }"
-          :id="useGenHumanReadableId(section._stem)" v-bind="section.fields" />
+          :id="useGenHumanReadableId(section._stem)" :isAnimation="isAnimation[index]" v-bind="section.fields"
+          @preview-clicked="previewClicked(index)" />
       </template>
 
       <!-- <ContentRendererMarkdown :value="section.body" /> -->
@@ -24,7 +25,12 @@ const { data: sections } = await useAsyncData('sections', async () => {
 })
 
 const lengthOfSections = computed(() => toRaw(sections.value).length).value
-console.log("🚀 ~ lengthOfSections:", lengthOfSections)
+
+const isAnimation = ref([])
+isAnimation.value = Array(lengthOfSections).fill(false)
+const previewClicked = (index: number) => {
+  isAnimation.value = isAnimation.value.map((elem, i) => index === i ? !elem : elem)
+}
 </script>
 
 <style>
