@@ -1,13 +1,16 @@
 <template>
   <main class="content-grid">
-    <Navigation />
+    <Navigation v-if="!isAnimationAnywhere" />
     <template v-for="(section, index) in sections" :key="section._id">
       <template v-if="section._stem === '_1.witamy'">
         <Witamy class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields"
           :link="useGenHumanReadableId(sections[index + 1]._stem)" />
       </template>
       <template v-else>
-        <GenerycznaSekcja class="full-width" :id="useGenHumanReadableId(section._stem)" v-bind="section.fields" />
+        <GenerycznaSekcja class="full-width"
+          :class="{ 'mb-[--menu-height]': index + 1 === lengthOfSections && !isAnimationAnywhere }"
+          :id="useGenHumanReadableId(section._stem)" :isAnimation="isAnimation[index]" v-bind="section.fields"
+          @preview-clicked="previewClicked(index)" />
       </template>
 
       <!-- <ContentRendererMarkdown :value="section.body" /> -->
@@ -20,6 +23,19 @@ import { useGenHumanReadableId } from '../composable/useGenHumanReadableId'
 
 const { data: sections } = await useAsyncData('sections', async () => {
   return await queryContent().find()
+})
+
+const lengthOfSections = computed(() => toRaw(sections.value).length).value
+
+const isAnimation = ref([])
+isAnimation.value = Array(lengthOfSections).fill(false)
+const previewClicked = (index: number) => {
+  isAnimation.value = isAnimation.value.map((elem, i) => index === i ? !elem : elem)
+}
+const isAnimationAnywhere = ref(false);
+
+watch(isAnimation, (newIsAnimation, oldIsAnimation) => {
+  isAnimationAnywhere.value = newIsAnimation.some((elem) => elem)
 })
 </script>
 
@@ -53,8 +69,11 @@ const { data: sections } = await useAsyncData('sections', async () => {
   grid-template-columns: inherit;
 }
 
-
 .flow>*+* {
   margin-top: var(--flow-spacing, 1em);
+}
+
+.h-section {
+  height: calc(100vh - var(--menu-height));
 }
 </style>
